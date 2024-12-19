@@ -1,10 +1,11 @@
 #!/bin/bash
 declare -a array
 read -p "how many itesm you want in your array?: " n
-
+sum=0
 #Enter elements
 for ((i = 0; i < n; i++)); do
     read -p "Enter value of item ($i): " value
+    sum=$((sum + value))
     array[$i]=$value
 done
 
@@ -29,3 +30,5 @@ echo "Sorted Array: ${array[@]}"
 echo "Highest item from the array: $highest"
 
 echo "Lowest item from the array: $lowest"
+
+echo "sum of all items are: $sum"
