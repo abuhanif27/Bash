@@ -1,16 +1,15 @@
 #!/bin/bash
 
-# This is designed for test
-run=1
-while [ $run -eq 1 ]
-do
-    read -p "Type something here: " type
-    if [ "$type" = "exit" ]  # Use '=' for string comparison
-    then 
-        echo "Thank you for using"
-        run=0  # Change run to 0 to exit the loop
-    else
-        echo "You typed: $type"
-    fi
+read -p "who many times you want as fibonnaic? " n
+result=0
+a=0
+b=1
+for ((i = 2; i < $n - 2; i++)); do
+    result=$((a + b))
+    a=$((i - 1))
+    echo $a
+    b=$((i - 2))
+    echo $b
 done
 
+echo "Factorial of $n is : "$result
